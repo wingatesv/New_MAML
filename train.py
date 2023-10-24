@@ -293,8 +293,8 @@ if __name__=='__main__':
 
     params.checkpoint_dir = '%s/checkpoints/%s/%s_%s' %(configs.save_dir, params.dataset, params.model, params.method)
     if params.train_aug:
-        params.checkpoint_dir += '_aug'
-    if params.sn == 'stainnet':
+        params.checkpoint_dir += f'_{params.train_aug}'
+    if params.sn:
         params.checkpoint_dir += '_stainnet'
     if not params.method  in ['baseline', 'baseline++']: 
         params.checkpoint_dir += '_%dway_%dshot' %( params.train_n_way, params.n_shot)
